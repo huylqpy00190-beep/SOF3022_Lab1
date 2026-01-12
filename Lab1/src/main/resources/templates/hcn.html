@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>HÌNH CHỮ NHẬT</h2>
+
+    <form action="/hcn/tinh" method="post">
+        <label>Chiều dài</label>
+        <input type="number" step="any" name="dai" placeholder="Nhập chiều dài">
+
+        <label>Chiều rộng</label>
+        <input type="number" step="any" name="rong" placeholder="Nhập chiều rộng">
+
+        <button type="submit">Tính toán</button>
+
+    </form>
+
+    <!-- Kết quả -->
+    <div class="result" th:if="${area != null}">
+        <h3>Kết quả tính toán</h3>
+
+        <p>
+            Diện tích:
+            <b th:text="${area}"></b>
+        </p>
+        <p>
+            Chu vi:
+            <b th:text="${perimeter}"></b>
+        </p>
+
+        <!-- Hiển thị chi tiết phép tính -->
+        <hr>
+        <p>
+            Công thức diện tích: S = dài × rộng
+        </p>
+        <p>
+            ⇒ S = <span th:text="${dai}"></span> ×
+            <span th:text="${rong}"></span>
+        </p>
+
+        <p>
+            Công thức chu vi: P = 2 × (dài + rộng)
+        </p>
+        <p>
+            ⇒ P = 2 × (<span th:text="${dai}"></span> +
+            <span th:text="${rong}"></span>)
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
