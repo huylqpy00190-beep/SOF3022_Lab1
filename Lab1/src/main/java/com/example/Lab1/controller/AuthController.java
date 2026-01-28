@@ -12,7 +12,7 @@ public class AuthController {
     @Autowired
     HttpServletRequest request;
 
-    @RequestMapping("/login/form")
+    @RequestMapping("  ")
     public String form() {
         return "login"; // Trả về file login.html
     }
